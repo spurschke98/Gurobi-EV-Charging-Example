@@ -1,6 +1,6 @@
 \ Model EV Charging Network - Realistic
 \ LP format - for model browsing. Use MPS format to capture full model detail.
-\ Signature: 0xbbad78a2ac1ab86c
+\ Signature: 0xbbad78a2ac19fc36
 Maximize
   4 charger_assignments[site1,Level1] + 12 charger_assignments[site1,Level2]
    + 48 charger_assignments[site1,Fast50]

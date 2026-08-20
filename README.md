@@ -10,14 +10,6 @@ https://colab.research.google.com/github/spurschke98/Gurobi-EV-Charging-Example/
 
 You are deploying EV charging stations for a municipal parking authority, and must decide **how many chargers of each type to install, and where**. Every deployment is constrained by four limited resources: **budget, electrical capacity, physical space, and equipment units**. Faster chargers serve far more vehicles but consume disproportionately more of each, making for an interesting trade-off.
 
-| Charger | Vehicles/day | Install cost | Fixed cost | Power (kW) | Space (m²) | Equipment |
-|---|---|---|---|---|---|---|
-| Level 1 (120V) | 4 | $2,000 | $5,000 | 1.4 | 12 | 0 |
-| Level 2 (240V) | 12 | $6,000 | $12,000 | 7.2 | 12 | 1 |
-| DC Fast 50kW | 48 | $18,000 | $25,000 | 50 | 18 | 2 |
-| DC Fast 150kW | 72 | $40,000 | $40,000 | 150 | 20 | 4 |
-| DC Ultra-Fast 350kW | 127 | $90,000 | $70,000 | 350 | 25 | 6 |
-
 ## 1. Demonstrating `gurobipy`
 
 Every model component appears as algebra first and then as code, so you can see how closely `gurobipy` syntax tracks the mathematical notation. Key steps are then rewritten several ways to show how compactly the API expresses the same math. For example, the objective starts written out term-by-term, becomes a `gp.quicksum()` over charger types, and finally collapses into a single `x.prod()` call.
